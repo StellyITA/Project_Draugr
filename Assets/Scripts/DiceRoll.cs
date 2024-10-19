@@ -21,7 +21,6 @@ public class DiceRoll : MonoBehaviour
 	// If player presses spacebar
 	if (Input.GetKeyDown(KeyCode.Space))
 	{
-	    Debug.Log(_text);
 	    // public static int Range(int minInclusive, int maxExclusive);
 	    _value = Random.Range(1,7);
 	    _text.text = Format("{0}", _value);
