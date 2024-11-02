@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 	private Vector3[] _coordinates;
 	private int _currentCell = -1;
 	private int _nextCell = -1;
+	private int _speed = 2;
 	private bool _isMoving;
 
 	void Awake()
@@ -57,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			Vector3 direction = Vector3.Normalize(_coordinates[_currentCell + 1] - transform.position);
 
-			transform.Translate(direction * Time.deltaTime);
+			transform.Translate(direction * Time.deltaTime * _speed);
 
 			if ((direction.x > 0 
 					&& transform.position.x >= _coordinates[_currentCell + 1].x)
@@ -94,10 +95,15 @@ public class PlayerMovement : MonoBehaviour
 		_dice1.SetActive(true);
 		_dice2.SetActive(true);
 		
-		Debug.Log(_roll1.GetRoll());
-		Debug.Log(_roll2.GetRoll());
+		Debug.Log(name + " D6 I:" + _roll1.GetRoll());
+		Debug.Log(name + " D6 II:" + _roll2.GetRoll());
 
 		_nextCell += _roll1.GetRoll() + _roll2.GetRoll();
+
+		if (_coordinates != null && _nextCell >= _coordinates.Length)
+		{
+			_nextCell = _coordinates.Length - 1;
+		}
 
 		_dice1.SetActive(false);
 		_dice2.SetActive(false);

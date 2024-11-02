@@ -1,4 +1,5 @@
 using static System.Array;
+using UnityEngine;
 
 public class MinPriorityQueue<T>
 {
@@ -65,7 +66,7 @@ public class MinPriorityQueue<T>
 				|| (i * 2 + 1 <= _count 
 					&& _priorities[i] >= _priorities[i * 2 + 1]))
 		{
-			if (_priorities[i] >= _priorities[i * 2])
+			if (_priorities[i * 2 + 1] >= _priorities[i * 2])
 			{
 				T tempElement = _elements[i];
 				int tempPriority = _priorities[i];
