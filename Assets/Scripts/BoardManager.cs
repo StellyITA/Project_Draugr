@@ -4,78 +4,84 @@ using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
-	public Vector3[] _coordinatesInOrder { get; private set; } = new Vector3[40];
-	private Vector3[][] _coordinatesMatrix = new Vector3[7][];
+	private Vector3[][] _coordinatesMatrix;
+	private Vector3[] _coordinatesInOrder;
+	private int _rows = 7;
 	private int _columns = 6;
+	private int _cellNumber = 40;
 	private int _distanceBetweenCells = 2;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-		initializeCoords();
-		getCellProgression();
+		GenerateBoardMatrix();
+
+		GetCellsOrder();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }	
-
-	void initializeCoords()
+	public Vector3[] GetCoordinates()
 	{
-		for (int i = 0; i < _coordinatesMatrix.Length; i++)
-		{
-			_coordinatesMatrix[i] = new Vector3[_columns];
-
-			for (int j = 0; j < _columns; j++)
-			{
-				_coordinatesMatrix[i][j] = new Vector3(
-					i * _distanceBetweenCells,
-					0,
-					j * _distanceBetweenCells
-				);
-			}
-		}
+		return _coordinatesInOrder;
 	}
 
-	void getCellProgression()
+	void GetCellsOrder()
 	{
-		int top = 0;
-		int bottom = _coordinatesMatrix.Length - 1;
-		int left = 0;
-		int right = _coordinatesMatrix[0].Length - 1;
-		int i = 0;
+		_coordinatesInOrder = new Vector3[_cellNumber];
 
-		while (i < _coordinatesInOrder.Length)
+		int top = 0;
+		int left = 0;
+		int bottom = _rows - 1;
+		int right = _columns - 1;
+		
+		int i = 0;
+		while (i < _cellNumber)
 		{
-			for (int j = left; j <= right && i < _coordinatesInOrder.Length; j++)
+			for (int j = left; j <= right && i < _cellNumber; j++)
 			{
 				_coordinatesInOrder[i] = _coordinatesMatrix[top][j];
-				i++;	
+			   i++;	
 			}
 			top++;
 
-			for (int j = top; j <= bottom && i < _coordinatesInOrder.Length; j++)
+			for (int j = top; j <= bottom && i < _cellNumber; j++)
 			{
 				_coordinatesInOrder[i] = _coordinatesMatrix[j][right];
-				i++;	
+			   i++;	
 			}
 			right--;
 
-			for (int j = right; j >= left && i < _coordinatesInOrder.Length; j--)
+			for (int j = right; j >= left && i < _cellNumber; j--)
 			{
 				_coordinatesInOrder[i] = _coordinatesMatrix[bottom][j];
-				i++;	
+			   i++;	
 			}
 			bottom--;
 
-			for (int j = bottom; j >= top && i < _coordinatesInOrder.Length; j--)
+			for (int j = bottom; j >= top && i < _cellNumber; j--)
 			{
 				_coordinatesInOrder[i] = _coordinatesMatrix[j][left];
-				i++;	
-			}	
+			   i++;	
+			}
 			left++;
+		}
+	}
+
+	void GenerateBoardMatrix()
+	{
+		_coordinatesMatrix = new Vector3[_rows][];
+
+		for (int x = 0; x < _rows; x++)
+		{
+			_coordinatesMatrix[x] = new Vector3[_columns];
+
+			for (int z = 0; z < _columns; z++)
+			{
+				_coordinatesMatrix[x][z] = new Vector3(
+					x * _distanceBetweenCells, 
+					0, 
+					z * _distanceBetweenCells
+				);
+			}
 		}
 	}
 }

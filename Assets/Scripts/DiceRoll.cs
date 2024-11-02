@@ -1,16 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static System.String;
 
 public class DiceRoll : MonoBehaviour
 {
-	public int _value { get; private set; }
+	[SerializeField]
+	private int _maxExclusive;
+	
+	[SerializeField]
+	private int _minInclusive;
 
-	void Awake()
+	private int _roll;
+
+    void OnEnable()
+    {
+		_roll = Random.Range(_minInclusive, _maxExclusive);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+	public int GetRoll()
 	{
-		// UnityEngine.Random
-		// public static int Range(int minInclusive, int maxExclusive)
-		_value = Random.Range(1,7);
+		return _roll;
 	}
 }
