@@ -308,12 +308,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _rollAnimation1
       value: 
-      objectReference: {fileID: 1956388090}
+      objectReference: {fileID: 845751581}
     - target: {fileID: -4732214509062945376, guid: deee6b32248c4677499d7e1449f6438e,
         type: 3}
       propertyPath: _rollAnimation2
       value: 
-      objectReference: {fileID: 1467561309}
+      objectReference: {fileID: 73497427}
     - target: {fileID: 1843804698122614833, guid: deee6b32248c4677499d7e1449f6438e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -502,7 +502,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _rollAnimation
       value: 
-      objectReference: {fileID: 1467561309}
+      objectReference: {fileID: 73497429}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -523,6 +523,12 @@ Animation:
 --- !u!4 &73497428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4257316465501729712, guid: 02f95a4ea8b4ef66984a591a165e1209,
+    type: 3}
+  m_PrefabInstance: {fileID: 73497425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &73497429 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 5307122844443450029, guid: 02f95a4ea8b4ef66984a591a165e1209,
     type: 3}
   m_PrefabInstance: {fileID: 73497425}
   m_PrefabAsset: {fileID: 0}
@@ -1722,7 +1728,7 @@ Transform:
   m_GameObject: {fileID: 368337368}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 0, z: 3}
+  m_LocalPosition: {x: -4, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2624,12 +2630,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _rollAnimation1
       value: 
-      objectReference: {fileID: 1956388090}
+      objectReference: {fileID: 845751581}
     - target: {fileID: -4732214509062945376, guid: deee6b32248c4677499d7e1449f6438e,
         type: 3}
       propertyPath: _rollAnimation2
       value: 
-      objectReference: {fileID: 1467561309}
+      objectReference: {fileID: 73497427}
     - target: {fileID: 1843804698122614833, guid: deee6b32248c4677499d7e1449f6438e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2738,12 +2744,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _rollAnimation1
       value: 
-      objectReference: {fileID: 1956388090}
+      objectReference: {fileID: 845751581}
     - target: {fileID: -4732214509062945376, guid: deee6b32248c4677499d7e1449f6438e,
         type: 3}
       propertyPath: _rollAnimation2
       value: 
-      objectReference: {fileID: 1467561309}
+      objectReference: {fileID: 73497427}
     - target: {fileID: 1843804698122614833, guid: deee6b32248c4677499d7e1449f6438e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3552,12 +3558,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _rollAnimation1
       value: 
-      objectReference: {fileID: 1956388090}
+      objectReference: {fileID: 845751581}
     - target: {fileID: -4732214509062945376, guid: deee6b32248c4677499d7e1449f6438e,
         type: 3}
       propertyPath: _rollAnimation2
       value: 
-      objectReference: {fileID: 1467561309}
+      objectReference: {fileID: 73497427}
     - target: {fileID: 1843804698122614833, guid: deee6b32248c4677499d7e1449f6438e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4327,6 +4333,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6354471851128992690, guid: 02f95a4ea8b4ef66984a591a165e1209,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8613674975636125610, guid: 02f95a4ea8b4ef66984a591a165e1209,
         type: 3}
       propertyPath: _fallAnimation
@@ -4336,7 +4347,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _rollAnimation
       value: 
-      objectReference: {fileID: 1956388090}
+      objectReference: {fileID: 845751582}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4351,6 +4362,12 @@ GameObject:
 --- !u!111 &845751581 stripped
 Animation:
   m_CorrespondingSourceObject: {fileID: 4472578931643235769, guid: 02f95a4ea8b4ef66984a591a165e1209,
+    type: 3}
+  m_PrefabInstance: {fileID: 845751579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &845751582 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 5307122844443450029, guid: 02f95a4ea8b4ef66984a591a165e1209,
     type: 3}
   m_PrefabInstance: {fileID: 845751579}
   m_PrefabAsset: {fileID: 0}
@@ -5384,12 +5401,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _rollAnimation1
       value: 
-      objectReference: {fileID: 1956388090}
+      objectReference: {fileID: 845751581}
     - target: {fileID: -5555363302524004437, guid: 7405919a01a89da1bb6dea999e9775fc,
         type: 3}
       propertyPath: _rollAnimation2
       value: 
-      objectReference: {fileID: 1467561309}
+      objectReference: {fileID: 73497427}
     - target: {fileID: 2650112339293545119, guid: 7405919a01a89da1bb6dea999e9775fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7148,12 +7165,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1462139176}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &1467561309 stripped
-Animation:
-  m_CorrespondingSourceObject: {fileID: 5307122844443450029, guid: 02f95a4ea8b4ef66984a591a165e1209,
-    type: 3}
-  m_PrefabInstance: {fileID: 73497425}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1502515827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8065,12 +8076,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928231720}
   m_CullTransparentMesh: 1
---- !u!111 &1956388090 stripped
-Animation:
-  m_CorrespondingSourceObject: {fileID: 5307122844443450029, guid: 02f95a4ea8b4ef66984a591a165e1209,
-    type: 3}
-  m_PrefabInstance: {fileID: 845751579}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1977494568
 GameObject:
   m_ObjectHideFlags: 0
@@ -8774,7 +8779,7 @@ Transform:
   m_GameObject: {fileID: 2137591014}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5, y: 0, z: 3}
+  m_LocalPosition: {x: -2, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8818,12 +8823,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _rollAnimation1
       value: 
-      objectReference: {fileID: 1956388090}
+      objectReference: {fileID: 845751581}
     - target: {fileID: -4732214509062945376, guid: deee6b32248c4677499d7e1449f6438e,
         type: 3}
       propertyPath: _rollAnimation2
       value: 
-      objectReference: {fileID: 1467561309}
+      objectReference: {fileID: 73497427}
     - target: {fileID: 2939383253670821078, guid: deee6b32248c4677499d7e1449f6438e,
         type: 3}
       propertyPath: m_LocalPosition.x
