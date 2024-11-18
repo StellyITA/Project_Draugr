@@ -15,6 +15,6 @@ Gioco da tavolo su Unity
 - camelCase: per i parametri dei metodi e per le variabili. es. fireRate, TakeDamage(int damage)
 - _camelCase: per le variabili private iniziate con un underscore _ 
 - s_camelCase: per le variabili statiche iniziate con s e underscore s_
-- Spacing: apertura parentesi { sempre in newline, 4 spazi per l'indentatura (tab)
+- Spacing: apertura parentesi { sempre in newline (Allman style), 4 spazi per l'indentatura (tab)
 
 

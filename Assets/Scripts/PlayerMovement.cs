@@ -20,6 +20,12 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField]
 	private GameObject _turnObject;
 
+	[SerializeField]
+	private Animation _rollAnimation1;
+
+	[SerializeField]
+	private Animation _rollAnimation2;
+
 	private BoardManager _boardManager;
 	private TurnManager _turnManager;
 	private DiceRoll _roll1;
@@ -54,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (_nextCell > _currentCell)
+		if (_nextCell > _currentCell && !_rollAnimation1.isPlaying && !_rollAnimation2.isPlaying)
 		{
 			Vector3 direction = Vector3.Normalize(_coordinates[_currentCell + 1] - transform.position);
 
@@ -73,9 +79,11 @@ public class PlayerMovement : MonoBehaviour
 				transform.position = _coordinates[_currentCell];
 			}
 		}
-		else if (_isMoving)
+		else if (_isMoving && !_rollAnimation1.isPlaying && !_rollAnimation2.isPlaying)
 		{
 			_isMoving = false;
+			_dice1.SetActive(false);
+			_dice2.SetActive(false);
 			_turnManager.SetNextTurn();
 		}
     }
@@ -104,8 +112,5 @@ public class PlayerMovement : MonoBehaviour
 		{
 			_nextCell = _coordinates.Length - 1;
 		}
-
-		_dice1.SetActive(false);
-		_dice2.SetActive(false);
 	}
 }
