@@ -5,16 +5,14 @@ using UnityEngine;
 public class TurnManager : MonoBehaviour
 {
 	[SerializeField]
-	private GameObject[] _players;
+	private PlayerMovement[] _players;
 
 	[SerializeField]
-	private GameObject _dice1;
-
-	[SerializeField]
-	private GameObject _dice2;
-
 	private DiceRoll _roll1;
+
+	[SerializeField]
 	private DiceRoll _roll2;
+
 	private CircularSingleLinkedList<PlayerMovement> _turns;
 	private ListNode<PlayerMovement> _currentTurn;
 
@@ -41,24 +39,16 @@ public class TurnManager : MonoBehaviour
 
 	void SetTurnsOrder()
 	{
-		_roll1 = _dice1.GetComponent<DiceRoll>();
-		_roll2 = _dice2.GetComponent<DiceRoll>();
+		MinPriorityQueue<PlayerMovement> playersMinHeap = new MinPriorityQueue<PlayerMovement>();
 
-        MinPriorityQueue<PlayerMovement> playersMinHeap = new MinPriorityQueue<PlayerMovement>();
-
-		foreach (GameObject player in _players)
+		foreach (PlayerMovement player in _players)
 		{
-			_dice1.SetActive(true);
-			_dice2.SetActive(true);
-			
-			PlayerMovement playerScript = player.GetComponent<PlayerMovement>();
+			int rollValue1 = _roll1.GetRoll();
+			int rollValue2 = _roll2.GetRoll();
 
-			playersMinHeap.Enqueue(playerScript, _roll1.GetRoll() + _roll2.GetRoll());
+			playersMinHeap.Enqueue(player, rollValue1 + rollValue2);
 
-			Debug.Log(player.name + ": " + _roll1.GetRoll() + ", " + _roll2.GetRoll());
-
-			_dice1.SetActive(false);
-			_dice2.SetActive(false);
+			Debug.Log(player.gameObject.name + ": " + rollValue1 + ", " + rollValue2);
 		}
 	
 		_turns = new CircularSingleLinkedList<PlayerMovement>(playersMinHeap.Dequeue());
