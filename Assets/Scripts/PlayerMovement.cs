@@ -103,10 +103,13 @@ public class PlayerMovement : MonoBehaviour
 		_dice1.SetActive(true);
 		_dice2.SetActive(true);
 		
-		Debug.Log(name + " D6 I:" + _roll1.GetRoll());
-		Debug.Log(name + " D6 II:" + _roll2.GetRoll());
+		int rollValue1 = _roll1.GetRoll();
+		int rollValue2 = _roll2.GetRoll();
 
-		_nextCell += _roll1.GetRoll() + _roll2.GetRoll();
+		Debug.Log(name + " D6 I:" + rollValue1);
+		Debug.Log(name + " D6 II:" + rollValue2);
+
+		_nextCell += rollValue1 + rollValue2;
 
 		if (_coordinates != null && _nextCell >= _coordinates.Length)
 		{

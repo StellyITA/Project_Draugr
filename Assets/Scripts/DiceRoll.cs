@@ -5,12 +5,6 @@ using UnityEngine;
 public class DiceRoll : MonoBehaviour
 {
 	[SerializeField]
-	private int _maxExclusive;
-	
-	[SerializeField]
-	private int _minInclusive;
-
-	[SerializeField]
 	private Animation _fallAnimation;
 
 	[SerializeField]
@@ -30,24 +24,18 @@ public class DiceRoll : MonoBehaviour
 		_initialRotations[5] = new Vector3(180,0,0);
 	}
 
-    void OnEnable()
-    {
-		_roll = Random.Range(_minInclusive, _maxExclusive);
-
-		transform.localEulerAngles = new Vector3(_initialRotations[_roll - 1].x, Random.Range(0,360), _initialRotations[_roll - 1].z);
-
-		_rollAnimation.Play();
-		_fallAnimation.Play();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 	public int GetRoll()
 	{
+		_roll = Random.Range(1, 7);
+
+		if (gameObject.activeSelf)
+		{
+			transform.localEulerAngles = new Vector3(_initialRotations[_roll - 1].x, Random.Range(0,360), _initialRotations[_roll - 1].z);
+
+			_rollAnimation.Play();
+			_fallAnimation.Play();
+		}
+
 		return _roll;
 	}
 }
